@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Health & AI Summit 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset & Base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: 'Inter', sans-serif; 
+      color: #1a365d; 
+      line-height: 1.6; 
+    }
+    h1, h2, h3, h4, h5, h6 { 
+      font-family: 'Playfair Display', serif; 
+      font-weight: 600;
+      text-align: center;
+    }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img { max-width: 100%; display: block; }
+
+    /* Header/Nav */
+    header { 
+      position: fixed; 
+      top: 0; 
+      left: 0; 
+      width: 100%; 
+      background: rgba(26, 54, 93, 0.95); 
+      backdrop-filter: blur(10px); 
+      z-index: 100;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .container { width: 90%; max-width: 1200px; margin: auto; }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; }
+    .logo img { height: 40px; }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { 
+      font-weight: 500; 
+      transition: color 0.3s; 
+      color: #ffffff;
+      font-size: 0.95rem;
+    }
+    .nav-links a:hover { color: #60a5fa; }
+    .cta-btn { 
+      padding: 0.7rem 1.5rem; 
+      border-radius: 6px; 
+      background: #60a5fa; 
+      color: #ffffff; 
+      font-weight: 600; 
+      transition: all 0.3s;
+      border: 2px solid #60a5fa;
+    }
+    .cta-btn:hover { 
+      background: #3b82f6; 
+      border-color: #3b82f6;
+      transform: translateY(-2px);
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      margin-top: 70px;
+      height: 90vh;
+      color: #fff;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .video-bg {
+      position: absolute;
+      top: 0; 
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .video-bg iframe {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+
+    /* Video Overlay */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(26, 54, 93, 0.8), rgba(30, 64, 175, 0.6));
+      z-index: -1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      padding: 2rem;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      letter-spacing: -1px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+      font-weight: 300;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-group .cta-btn {
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid #ffffff;
+      color: #ffffff;
+    }
+
+    .btn-secondary:hover {
+      background: #ffffff;
+      color: #1a365d;
+    }
+
+    /* Countdown & Info */
+    .info { 
+      background: linear-gradient(135deg, #f8fafc, #e2e8f0); 
+      padding: 3rem 0; 
+      text-align: center;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .info h2 { 
+      margin-bottom: 2rem; 
+      font-size: 2rem; 
+      color: #1a365d;
+    }
+    .countdown { display: inline-flex; gap: 1.5rem; text-align: center; }
+    .countdown div { 
+      background: linear-gradient(135deg, #1e3a8a, #1e40af);
+      color: #fff; 
+      padding: 1.5rem; 
+      border-radius: 12px; 
+      min-width: 90px;
+      box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .countdown div span { 
+      display: block; 
+      font-size: 1.8rem; 
+      font-weight: bold; 
+      font-family: 'Inter', sans-serif;
+    }
+    .countdown div small { 
+      font-size: 0.8rem; 
+      text-transform: uppercase; 
+      letter-spacing: 1px; 
+      opacity: 0.9;
+    }
+
+    /* About Section */
+    .about { 
+      padding: 4rem 0; 
+      background: #ffffff;
+    }
+    .about h2 { 
+      font-size: 2.5rem; 
+      margin-bottom: 1rem; 
+      color: #1a365d;
+    }
+    .about p.lead { 
+      text-align: center; 
+      color: #64748b; 
+      margin-bottom: 3rem; 
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
+    .about > p {
+      text-align: center; 
+      max-width: 800px; 
+      margin: 0 auto 2rem; 
+      color: #475569;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+    .features { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+      gap: 2.5rem; 
+      margin-top: 3rem;
+    }
+    .feature { 
+      background: #ffffff; 
+      border-radius: 12px; 
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); 
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .feature:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+    .feature img { 
+      height: 200px; 
+      width: 100%; 
+      object-fit: cover;
+    }
+    .feature-content { 
+      padding: 1.5rem; 
+    }
+    .feature-content h3 { 
+      margin-bottom: 0.8rem; 
+      font-size: 1.3rem; 
+      color: #1a365d;
+      text-align: left;
+    }
+    .feature-content p { 
+      color: #64748b; 
+      font-size: 1rem; 
+      line-height: 1.6;
+    }
+
+    /* Speakers */
+    .speakers { 
+      padding: 4rem 0; 
+      background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+      border-top: 1px solid #e2e8f0;
+    }
+    .speakers h2 { 
+      font-size: 2.5rem; 
+      margin-bottom: 3rem; 
+      color: #1a365d;
+    }
+
+    /* Speaker scrolling container */
+    .speaker-scroll {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+    }
+
+    .speaker-track {
+      display: flex;
+      gap: 3rem;
+      animation: scroll-left 30s linear infinite;
+    }
+
+    .speaker {
+      flex: 0 0 auto;
+      text-align: center;
+    }
+
+    .speaker img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto;
+      box-shadow: 0 6px 20px rgba(30, 58, 138, 0.2);
+      transition: transform 0.3s ease;
+      border: 4px solid #ffffff;
+    }
+
+    .speaker img:hover {
+      transform: scale(1.05);
+    }
+
+    .speaker h4 { 
+      margin: 1rem 0 0.3rem; 
+      font-size: 1.2rem; 
+      color: #1a365d;
+      font-family: 'Playfair Display', serif;
+    }
+    .speaker p { 
+      font-size: 0.95rem; 
+      color: #64748b; 
+      font-weight: 500;
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 4rem 0;
+      background: #ffffff;
+    }
+
+    .contact h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #1a365d;
+    }
+
+    .contact form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact input,
+    .contact textarea {
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+
+    .contact input:focus,
+    .contact textarea:focus {
+      outline: none;
+      border-color: #60a5fa;
+    }
+
+    .contact button {
+      width: 100%;
+      padding: 1rem;
+      background: linear-gradient(135deg, #1e3a8a, #1e40af);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .contact button:hover {
+      background: linear-gradient(135deg, #1e40af, #2563eb);
+      transform: translateY(-2px);
+    }
+
+    /* Join Section */
+    .join { 
+      background: linear-gradient(135deg, #1a365d, #1e3a8a); 
+      color: #fff; 
+      text-align: center; 
+      padding: 4rem 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .join h2 { 
+      font-size: 2.5rem; 
+      margin-bottom: 1.5rem; 
+      color: #ffffff;
+    }
+    .join p { 
+      max-width: 600px; 
+      margin: 0 auto 2rem; 
+      font-size: 1.2rem;
+      opacity: 0.9;
+      line-height: 1.7;
+    }
+    .join .btn { 
+      background: #60a5fa; 
+      color: #ffffff; 
+      padding: 1rem 2.5rem; 
+      border-radius: 8px; 
+      font-size: 1.1rem; 
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: 2px solid #60a5fa;
+    }
+    .join .btn:hover {
+      background: #3b82f6;
+      border-color: #3b82f6;
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+    footer { 
+      background: #0f172a; 
+      color: #94a3b8; 
+      text-align: center; 
+      padding: 2rem 0;
+      border-top: 1px solid #1e293b;
+    }
+    footer a { 
+      color: #60a5fa; 
+      transition: color 0.3s ease;
+    }
+    footer a:hover {
+      color: #93c5fd;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+      .nav-links { display: none; }
+      nav {
+        flex-wrap: wrap;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: rgba(26, 54, 93, 0.98);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        text-align: center;
+        padding: 1rem 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hero-content {
+        padding: 2rem 1rem;
+      }
+
+      .btn-group {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .btn-group a {
+        width: 280px;
+        text-align: center;
+      }
+
+      .feature img {
+        width: 100%;
+        height: auto;
+      }
+
+      .speaker img {
+        width: 150px;
+        height: 150px;
+      }
+
+      .countdown {
+        gap: 1rem;
+      }
+
+      .countdown div {
+        min-width: 70px;
+        padding: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .info h2,
+      .about h2,
+      .speakers h2,
+      .join h2,
+      .contact h2 {
+        font-size: 1.8rem;
+      }
+
+      .countdown div {
+        min-width: 60px;
+        padding: 0.8rem;
+      }
+
+      .countdown div span {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <img src="https://img.freepik.com/free-vector/blue-wavy-forms-transparent-background_1035-6744.jpg?w=740" alt="Paveway Ltd">
+        </div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#agenda">Agenda</a></li>
+          <li><a href="#speakers">Speakers</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#register" class="cta-btn">Register</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="video-bg">
+      <iframe
+        src="https://www.youtube.com/embed/3dqXHHCc5lA?autoplay=1&mute=1&controls=0&loop=1&playlist=3dqXHHCc5lA&modestbranding=1&showinfo=0&rel=0"
+        frameborder="0"
+        allow="autoplay; fullscreen"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <div class="hero-content container">
+      <h1>Health & AI Summit 2025</h1>
+      <p>Hosted by Paveway Ltd | 25-27 September 2025 • San Francisco, CA</p>
+      <div class="btn-group">
+        <a href="#register" class="cta-btn">Buy Tickets</a>
+        <a href="#agenda" class="cta-btn btn-secondary">View Agenda</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Countdown Info -->
+  <section class="info">
+    <h2>Next event starts in:</h2>
+    <div class="countdown">
+      <div><span>12</span><small>Days</small></div>
+      <div><span>08</span><small>Hours</small></div>
+      <div><span>45</span><small>Minutes</small></div>
+      <div><span>30</span><small>Seconds</small></div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about container">
+    <h2>About the Summit</h2>
+    <p class="lead">Exploring the intersection of healthcare and artificial intelligence to drive innovation and improve patient outcomes.</p>
+    <p>
+      The Health & AI Summit 2025 brings together healthcare professionals, researchers, technologists, and innovators from across the globe
+      to discuss and showcase the latest advancements in artificial intelligence applied to the medical field. Over three immersive days,
+      attendees will engage in keynotes, panel discussions, live demonstrations, and hands-on workshops covering topics like AI-assisted
+      diagnostics, robotic surgery, personalized treatment plans, and telemedicine platforms.
+    </p>
+    <p>
+      Whether you're a doctor looking to integrate smart solutions into your practice, a tech entrepreneur developing the next breakthrough
+      in AI, or a policymaker shaping the future of digital health, this summit offers you a platform to learn, network, and contribute to
+      the AI-powered future of global healthcare.
+    </p>
+    <div class="features">
+      <div class="feature">
+        <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg" alt="Why Attend">
+        <div class="feature-content">
+          <h3>Why Attend?</h3>
+          <p>Discover cutting-edge AI solutions revolutionizing diagnostics, treatment plans, and patient care across medical fields.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <img src="https://images.pexels.com/photos/8439072/pexels-photo-8439072.jpeg" alt="What You'll Learn">
+        <div class="feature-content">
+          <h3>What You'll Learn</h3>
+          <p>Engage in hands-on workshops on machine learning in imaging, predictive analytics, and ethical AI practices in medicine.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg" alt="Key Benefits">
+        <div class="feature-content">
+          <h3>Key Benefits</h3>
+          <p>Network with top health-tech innovators, gain CE credits, and access exclusive research insights from industry leaders.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Speakers Section -->
+  <section id="speakers" class="speakers container">
+    <h2>Meet Our Speakers</h2>
+    <div class="speaker-scroll" aria-label="Speaker carousel">
+      <div class="speaker-track" aria-live="polite" aria-atomic="true">
+        <div class="speaker">
+          <img src="https://photoheads.co.uk/wp-content/uploads/2020/05/headshot-with-client-testimonial.jpg" alt="Dr. Lisa M.">
+          <h4>Dr. Lisa M.</h4>
+          <p>AI in Diagnostic Imaging</p>
+        </div>
+        <div class="speaker">
+          <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg" alt="Prof. Ahmed K.">
+          <h4>Prof. Ahmed K.</h4>
+          <p>Ethics of AI in Healthcare</p>
+        </div>
+        <div class="speaker">
+          <img src="https://images.pexels.com/photos/17436610/pexels-photo-17436610.jpeg" alt="Dr. Angela R.">
+          <h4>Dr. Angela R.</h4>
+          <p>Predictive Analytics in Surgery</p>
+        </div>
+        <div class="speaker">
+          <img src="https://images.pexels.com/photos/1300402/pexels-photo-1300402.jpeg" alt="Dr. John B.">
+          <h4>Dr. John B.</h4>
+          <p>Wearable Health Devices</p>
+        </div>
+        <div class="speaker">
+          <img src="https://images.pexels.com/photos/31600508/pexels-photo-31600508.jpeg" alt="Dr. Marie C.">
+          <h4>Dr. Marie C.</h4>
+          <p>AI-Powered Telemedicine</p>
+        </div>
+        <div class="speaker">
+          <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg" alt="Prof. Greg N.">
+          <h4>Prof. Greg N.</h4>
+          <p>Data Privacy & AI Security</p>
+        </div>
+
+        <!-- Duplicate speakers for seamless infinite scroll -->
+        <div class="speaker">
+          <img src="https://photoheads.co.uk/wp-content/uploads/2020/05/headshot-with-client-testimonial.jpg" alt="Dr. Lisa M.">
+          <h4>Dr. Lisa M.</h4>
+          <p>AI in Diagnostic Imaging</p>
+        </div>
+        <div class="speaker">
+          <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg" alt="Prof. Ahmed K.">
+          <h4>Prof. Ahmed K.</h4>
+          <p>Ethics of AI in Healthcare</p>
+        </div>
+        <div class="speaker">
+          <img src="https://images.pexels.com/photos/17436610/pexels-photo-17436610.jpeg" alt="Dr. Angela R.">
+          <h4>Dr. Angela R.</h4>
+          <p>Predictive Analytics in Surgery</p>
+        </div>
+        <div class="speaker">
+          <img src="https://images.pexels.com/photos/1300402/pexels-photo-1300402.jpeg" alt="Dr. John B.">
+          <h4>Dr. John B.</h4>
+          <p>Wearable Health Devices</p>
+        </div>
+        <div class="speaker">
+          <img src="https://images.pexels.com/photos/31600508/pexels-photo-31600508.jpeg" alt="Dr. Marie C.">
+          <h4>Dr. Marie C.</h4>
+          <p>AI-Powered Telemedicine</p>
+        </div>
+        <div class="speaker">
+          <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg" alt="Prof. Greg N.">
+          <h4>Prof. Greg N.</h4>
+          <p>Data Privacy & AI Security</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section id="contact" class="contact container">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="subject" placeholder="Subject" required>
+      <textarea name="message" placeholder="Your Message" required rows="5"></textarea>
+      <button type="submit" class="cta-btn">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Join Section -->
+  <section class="join">
+    <div class="container">
+      <h2>Join the Future of Healthcare</h2>
+      <p>Be part of a community dedicated to harnessing AI for better health outcomes. Don't miss the chance to shape tomorrow's medical breakthroughs today.</p>
+      <a href="#register" class="btn">Register Now</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Health & AI Summit. Hosted by Paveway Ltd.</p>
+    <p><a href="#contact">Contact Us</a> | <a href="#privacy">Privacy Policy</a></p>
+  </footer>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData.entries());
+
+      if (!data.name || !data.email || !data.subject || !data.message) {
+        alert("Please fill out all fields.");
+        return;
+      }
+
+      // Example request simulation
+      alert("Thank you, " + data.name + "! Your message has been sent.");
+
+      // Optional: clear form after submission
+      this.reset();
+    });
+
+    const countdownElements = {
+      days: document.querySelector(".countdown div:nth-child(1) span"),
+      hours: document.querySelector(".countdown div:nth-child(2) span"),
+      minutes: document.querySelector(".countdown div:nth-child(3) span"),
+      seconds: document.querySelector(".countdown div:nth-child(4) span")
+    };
+
+    function updateCountdown() {
+      const targetDate = new Date();
+      targetDate.setDate(20);
+      targetDate.setHours(0, 0, 0, 0);
+
+      const now = new Date();
+      // If today is past the 20th, count for next month
+      if (now.getDate() > 20) {
+        targetDate.setMonth(now.getMonth() + 1);
+      }
+
+      const totalSeconds = Math.floor((targetDate - now) / 1000);
+
+      if (totalSeconds <= 0) {
+        countdownElements.days.textContent = "00";
+        countdownElements.hours.textContent = "00";
+        countdownElements.minutes.textContent = "00";
+        countdownElements.seconds.textContent = "00";
+        return;
+      }
+
+      const days = Math.floor(totalSeconds / (3600 * 24));
+      const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+
+      countdownElements.days.textContent = String(days).padStart(2, "0");
+      countdownElements.hours.textContent = String(hours).padStart(2, "0");
+      countdownElements.minutes.textContent = String(minutes).padStart(2, "0");
+      countdownElements.seconds.textContent = String(seconds).padStart(2, "0");
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
