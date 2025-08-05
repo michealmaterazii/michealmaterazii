@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Micheal Materazii</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h2>Micheal Materazii</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="services.html" class="nav-link">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="portfolio.html" class="nav-link active">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1>My Portfolio</h1>
+                <p>Showcasing my recent projects and client work</p>
+            </div>
+        </section>
+
+        <section class="portfolio-content">
+            <div class="container">
+                <div class="portfolio-filters">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="wordpress">WordPress</button>
+                    <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+                    <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+                </div>
+
+                <div class="portfolio-grid">
+                    <div class="portfolio-item" data-category="wordpress">
+                        <div class="portfolio-image">
+                            <div class="image-placeholder">
+                                <i class="fab fa-wordpress"></i>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>Business Consulting Website</h3>
+                            <p>Custom WordPress theme for a consulting firm with advanced booking system and client portal.</p>
+                            <div class="portfolio-tech">
+                                <span>WordPress</span>
+                                <span>PHP</span>
+                                <span>MySQL</span>
+                            </div>
+                            <div class="portfolio-links">
+                                <a href="#" class="btn btn-small">Live Demo</a>
+                                <a href="#" class="btn btn-small btn-secondary">View Code</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-category="fullstack">
+                        <div class="portfolio-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-code"></i>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>Task Management App</h3>
+                            <p>Full-stack web application for team collaboration with real-time updates and file sharing.</p>
+                            <div class="portfolio-tech">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                            </div>
+                            <div class="portfolio-links">
+                                <a href="#" class="btn btn-small">Live Demo</a>
+                                <a href="#" class="btn btn-small btn-secondary">View Code</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-category="ecommerce">
+                        <div class="portfolio-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>Fashion E-commerce Store</h3>
+                            <p>Complete online store with inventory management, payment processing, and order tracking.</p>
+                            <div class="portfolio-tech">
+                                <span>WooCommerce</span>
+                                <span>PHP</span>
+                                <span>Stripe API</span>
+                            </div>
+                            <div class="portfolio-links">
+                                <a href="#" class="btn btn-small">Live Demo</a>
+                                <a href="#" class="btn btn-small btn-secondary">View Code</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-category="wordpress">
+                        <div class="portfolio-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-newspaper"></i>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>News & Blog Platform</h3>
+                            <p>Multi-author blog platform with custom post types, advanced search, and social sharing.</p>
+                            <div class="portfolio-tech">
+                                <span>WordPress</span>
+                                <span>Custom Fields</span>
+                                <span>REST API</span>
+                            </div>
+                            <div class="portfolio-links">
+                                <a href="#" class="btn btn-small">Live Demo</a>
+                                <a href="#" class="btn btn-small btn-secondary">View Code</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-category="fullstack">
+                        <div class="portfolio-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>Analytics Dashboard</h3>
+                            <p>Real-time analytics dashboard with data visualization and reporting capabilities.</p>
+                            <div class="portfolio-tech">
+                                <span>Vue.js</span>
+                                <span>Laravel</span>
+                                <span>Chart.js</span>
+                            </div>
+                            <div class="portfolio-links">
+                                <a href="#" class="btn btn-small">Live Demo</a>
+                                <a href="#" class="btn btn-small btn-secondary">View Code</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-category="ecommerce">
+                        <div class="portfolio-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>Restaurant Ordering System</h3>
+                            <p>Online food ordering platform with menu management and delivery tracking system.</p>
+                            <div class="portfolio-tech">
+                                <span>React</span>
+                                <span>Express.js</span>
+                                <span>PayPal API</span>
+                            </div>
+                            <div class="portfolio-links">
+                                <a href="#" class="btn btn-small">Live Demo</a>
+                                <a href="#" class="btn btn-small btn-secondary">View Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <h2>Interested in Working Together?</h2>
+                    <p>Let's discuss your project and see how I can help bring your ideas to life.</p>
+                    <a href="contact.html" class="btn btn-primary">Start a Project</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Micheal Materazii. All rights reserved.</p>
+            <div class="social-links">
+                <a href="mailto:michealmaterazii@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://instagram.com/materazii.micheal" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
