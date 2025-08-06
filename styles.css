@@ -464,6 +464,37 @@ body {
     letter-spacing: 0.5px;
 }
 
+/* View All Speakers Button - Centered in section */
+.speakers-section-button {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.speakers-section-button .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+}
+
+.speakers-section-button .btn:hover {
+    background: linear-gradient(135deg, #1d4ed8, #1e40af);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+}
+
 /* Contact Section */
 .contact {
     padding: 5rem 0;
