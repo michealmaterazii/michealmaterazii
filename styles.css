@@ -389,6 +389,25 @@ body {
     gap: 2rem;
 }
 
+/* For centering button under middle speaker */
+.speakers-grid-with-button {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    align-items: start;
+}
+
+.speakers-grid-with-button .speaker-card {
+    grid-row: 1;
+}
+
+.speakers-grid-with-button .speakers-center-button {
+    grid-column: 2;
+    grid-row: 2;
+    text-align: center;
+    margin-top: 2rem;
+}
+
 .speaker-card {
     background: #fafafa;
     border-radius: 20px;
