@@ -389,23 +389,41 @@ body {
     gap: 2rem;
 }
 
-/* For centering button under middle speaker */
-.speakers-grid-with-button {
+/* Special grid for speakers with centered button */
+.speakers-with-center-button {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    align-items: start;
+    justify-items: center;
 }
 
-.speakers-grid-with-button .speaker-card {
-    grid-row: 1;
-}
-
-.speakers-grid-with-button .speakers-center-button {
+/* Button positioned under middle speaker */
+.view-all-speakers-btn {
     grid-column: 2;
-    grid-row: 2;
-    text-align: center;
-    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+    margin-top: 1rem;
+    gap: 0.5rem;
+}
+
+.view-all-speakers-btn:hover {
+    background: linear-gradient(135deg, #1d4ed8, #1e40af);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
 }
 
 .speaker-card {
@@ -779,6 +797,15 @@ body {
 
     .speakers-grid {
         grid-template-columns: 1fr;
+    }
+
+    .speakers-with-center-button {
+        grid-template-columns: 1fr;
+    }
+
+    .view-all-speakers-btn {
+        grid-column: 1;
+        justify-self: center;
     }
 
     .contact-content {
